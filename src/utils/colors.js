@@ -1,4 +1,3 @@
-// src/utils/colors.js
 
 export default {
     primary: '#C11B7D',       // Main theme color

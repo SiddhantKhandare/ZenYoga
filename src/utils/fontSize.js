@@ -27,7 +27,6 @@
 
 
 
-// src/utils/fontSize.js
 import { Dimensions, PixelRatio } from 'react-native';
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window');

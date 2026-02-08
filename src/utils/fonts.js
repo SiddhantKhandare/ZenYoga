@@ -1,4 +1,3 @@
-// src/utils/fonts.js
 
 const fonts = {
     poppinsBold: 'Poppins-Bold',
