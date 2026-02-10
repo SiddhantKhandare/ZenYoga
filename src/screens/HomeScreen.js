@@ -9,6 +9,7 @@ import {
   Dimensions,
   SafeAreaView,
   StatusBar,
+  Platform,
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import yogaPoses from '../data/yogaPosesData';
@@ -39,9 +40,15 @@ const HomeScreen = () => {
 
   return (
     <SafeAreaView style={styles.safeArea}>
-      <StatusBar barStyle="dark-content" backgroundColor={colors.background} />
+      <StatusBar
+        barStyle="dark-content"
+        backgroundColor={colors.background}
+        translucent={false}
+      />
+
       <View style={styles.container}>
         <Text style={styles.heading}>Yoga Poses</Text>
+
         <FlatList
           data={yogaPoses}
           renderItem={renderItem}
@@ -62,6 +69,7 @@ const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
     backgroundColor: colors.background,
+    paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0,
   },
   container: {
     flex: 1,
@@ -106,10 +114,10 @@ const styles = StyleSheet.create({
     color: colors.text,
     textAlign: 'center',
   },
-  subTitle:{
+  subTitle: {
     fontSize: fontSize.xs,
     fontFamily: fonts.poppinsMedium,
     color: colors.text,
     textAlign: 'center',
-  }
+  },
 });
